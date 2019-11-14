@@ -175,6 +175,14 @@
       4
     ]
   },
+  "sequenceTheme": {
+    "description": "Markdown--Sequence diagram theme",
+    "enum": [
+      "hand",
+      "simple"
+    ]
+  },
+
   "theme": {
     "description": "Theme--Select the theme used in Mark Text",
     "type": "string"

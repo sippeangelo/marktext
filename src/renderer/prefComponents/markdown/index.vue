@@ -40,6 +40,15 @@
       :options="listIndentationOptions"
       :onChange="value => onSelectChange('listIndentation', value)"
     ></cus-select>
+    <separator></separator>
+    <h5>Style</h5>
+    <cus-select
+      description="Sequence diagram theme"
+      :value="sequenceTheme"
+      :options="sequenceThemeOptions"
+      :onChange="value => onSelectChange('sequenceTheme', value)"
+      more="https://bramp.github.io/js-sequence-diagrams/"
+    ></cus-select>
   </div>
 </template>
 
@@ -52,7 +61,8 @@ import {
   orderListDelimiterOptions,
   preferHeadingStyleOptions,
   tabSizeOptions,
-  listIndentationOptions
+  listIndentationOptions,
+  sequenceThemeOptions
 } from './config'
 
 export default {
@@ -66,6 +76,7 @@ export default {
     this.preferHeadingStyleOptions = preferHeadingStyleOptions
     this.tabSizeOptions = tabSizeOptions
     this.listIndentationOptions = listIndentationOptions
+    this.sequenceThemeOptions = sequenceThemeOptions
     return {}
   },
   computed: {
@@ -75,7 +86,8 @@ export default {
       orderListDelimiter: state => state.preferences.orderListDelimiter,
       preferHeadingStyle: state => state.preferences.preferHeadingStyle,
       tabSize: state => state.preferences.tabSize,
-      listIndentation: state => state.preferences.listIndentation
+      listIndentation: state => state.preferences.listIndentation,
+      sequenceTheme: state => state.preferences.sequenceTheme
     })
   },
   methods: {

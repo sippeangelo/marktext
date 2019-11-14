@@ -139,6 +139,7 @@ export default {
       imageInsertAction: state => state.preferences.imageInsertAction,
       imageFolderPath: state => state.preferences.imageFolderPath,
       theme: state => state.preferences.theme,
+      sequenceTheme: state => state.preferences.sequenceTheme,
       hideScrollbar: state => state.preferences.hideScrollbar,
 
       currentFile: state => state.editor.currentFile,
@@ -214,6 +215,12 @@ export default {
             vegaTheme: 'latimes'
           }, true)
         }
+      }
+    },
+    sequenceTheme: function (value, oldValue) {
+      const { editor } = this
+      if (value !== oldValue && editor) {
+        editor.setOptions({ sequenceTheme: value })
       }
     },
     listIndentation: function (value, oldValue) {
@@ -321,7 +328,8 @@ export default {
         listIndentation,
         hideQuickInsertHint,
         editorLineWidth,
-        theme
+        theme,
+        sequenceTheme
       } = this
 
       // use muya UI plugins
@@ -346,6 +354,7 @@ export default {
         tabSize,
         listIndentation,
         hideQuickInsertHint,
+        sequenceTheme,
         imageAction: this.imageAction.bind(this),
         imagePathPicker: this.imagePathPicker.bind(this),
         clipboardFilePath: guessClipboardFilePath,

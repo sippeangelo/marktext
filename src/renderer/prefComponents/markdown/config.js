@@ -58,3 +58,11 @@ export const listIndentationOptions = [{
   label: '4 spaces',
   value: 4
 }]
+
+export const sequenceThemeOptions = [{
+  label: 'hand',
+  value: 'hand'
+}, {
+  label: 'simple',
+  value: 'simple'
+}]
